@@ -40,9 +40,9 @@ func NewOllama(cfg OllamaConfig) *Ollama {
 
 // ollamaChatReq matches Ollama POST /api/chat request.
 type ollamaChatReq struct {
-	Model    string    `json:"model"`
+	Model    string      `json:"model"`
 	Messages []ollamaMsg `json:"messages"`
-	Stream   bool      `json:"stream"`
+	Stream   bool        `json:"stream"`
 }
 
 type ollamaMsg struct {
@@ -68,7 +68,7 @@ func (o *Ollama) ChatStream(ctx context.Context, messages []Message, toolsSchema
 	}
 	msgs := make([]ollamaMsg, len(messages))
 	for i, m := range messages {
-		msgs[i] = ollamaMsg{Role: m.Role, Content: m.Content}
+		msgs[i] = ollamaMsg(m)
 	}
 	body := ollamaChatReq{Model: model, Messages: msgs, Stream: true}
 	payload, err := json.Marshal(body)
@@ -92,8 +92,8 @@ func (o *Ollama) ChatStream(ctx context.Context, messages []Message, toolsSchema
 }
 
 type ollamaStream struct {
-	body   io.ReadCloser
-	scan   *bufio.Scanner
+	body    io.ReadCloser
+	scan    *bufio.Scanner
 	lastLen int // for delta-only emission (Ollama sends full content per chunk)
 }
 

@@ -1,6 +1,9 @@
 package security
 
-import "regexp"
+import (
+	"fmt"
+	"regexp"
+)
 
 // Redact replaces known secret patterns with a placeholder.
 func Redact(s string) string {
@@ -24,11 +27,11 @@ func Redact(s string) string {
 
 // RedactEntropy replaces long high-entropy strings (e.g. tokens) with ***.
 func RedactEntropy(s string, minLen int) string {
-	if minLen <= 0 {
-		minLen = 32
+	n := minLen
+	if n <= 0 {
+		n = 32
 	}
-	// Replace long alphanumeric stretches (likely tokens)
-	tokenRe := regexp.MustCompile(`[A-Za-z0-9+/=_-]{32,}`)
+	tokenRe := regexp.MustCompile(fmt.Sprintf(`[A-Za-z0-9+/=_-]{%d,}`, n))
 	return tokenRe.ReplaceAllString(s, "***")
 }
 

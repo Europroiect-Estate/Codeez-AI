@@ -123,7 +123,7 @@ func runGitCommit(cmd *cobra.Command, args []string) error {
 		if sec.BlockCommit(diff) {
 			fmt.Print("Detected secrets in staged content. Type 'yes' to override: ")
 			var override string
-			fmt.Scanln(&override)
+			_, _ = fmt.Scanln(&override)
 			if override != "yes" {
 				fmt.Println("Commit aborted.")
 				return nil

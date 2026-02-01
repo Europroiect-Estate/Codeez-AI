@@ -1,10 +1,8 @@
 package cli
 
 import (
-	"bufio"
 	"fmt"
 	"net/http"
-	"os"
 	"path/filepath"
 	"strings"
 
@@ -127,13 +125,4 @@ func runProviderTest(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("no provider set; run codeez provider set ollama")
 	}
 	return nil
-}
-
-// readLine reads one line from stdin (for approval flows later).
-func readLine() (string, error) {
-	sc := bufio.NewScanner(os.Stdin)
-	if sc.Scan() {
-		return strings.TrimSpace(sc.Text()), nil
-	}
-	return "", sc.Err()
 }

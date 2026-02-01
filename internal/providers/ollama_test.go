@@ -18,7 +18,7 @@ func TestOllama_ChatStream(t *testing.T) {
 		}
 		w.Header().Set("Content-Type", "application/x-ndjson")
 		// Simulate NDJSON stream (Ollama sends cumulative content per chunk)
-		w.Write([]byte(`{"message":{"content":"Hello","role":"assistant"},"done":false}
+		_, _ = w.Write([]byte(`{"message":{"content":"Hello","role":"assistant"},"done":false}
 {"message":{"content":"Hello world","role":"assistant"},"done":true}
 `))
 	}))

@@ -2,6 +2,7 @@ package security
 
 import (
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -12,7 +13,11 @@ func TestSandbox_Resolve_inside(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !filepath.HasPrefix(resolved, dir) {
+	rel, err := filepath.Rel(dir, resolved)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if strings.HasPrefix(rel, "..") || filepath.IsAbs(rel) {
 		t.Errorf("resolved %s not under %s", resolved, dir)
 	}
 }

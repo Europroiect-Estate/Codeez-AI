@@ -2,7 +2,6 @@ package agent
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/Europroiect-Estate/Codeez-AI/internal/security"
 )
@@ -14,12 +13,6 @@ type SecurityAgent struct{}
 func (s *SecurityAgent) CheckDiff(diff string) error {
 	if security.ContainsSecret(diff) {
 		return fmt.Errorf("diff contains detected secret; refuse to commit unless overridden with strong confirmation")
-	}
-	// Unsafe patterns
-	for _, p := range []string{"eval(", "exec(", "os.system(", "subprocess.call("} {
-		if strings.Contains(diff, p) {
-			// Not necessarily bad; just flag for review
-		}
 	}
 	return nil
 }
