@@ -1,0 +1,9 @@
+{
+  "key_files": [
+    "cmd/codeez/main.go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "build": "go build ./..."
+}

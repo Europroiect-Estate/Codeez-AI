@@ -1,0 +1,58 @@
+# Binare / executabile
+codeez
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Build & output
+dist/
+build/
+bin/
+*.log
+*.out
+coverage.html
+coverage.out
+
+# Go
+vendor/
+go.work
+go.work.sum
+
+# IDE & editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-*
+
+# OS
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+
+# Env & secrets (nu comita chei)
+.env
+.env.*
+!.env.example
+
+# Date locale / cache proiect (opțional: comentează dacă vrei să comiți .codeez/)
+.codeez/*.db
+.codeez/*.sqlite
+.codeez/sessions/
+
+# Temporare
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.cache

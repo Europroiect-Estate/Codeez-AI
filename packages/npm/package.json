@@ -1,0 +1,19 @@
+{
+  "name": "codeez",
+  "version": "0.1.0",
+  "description": "Codeez by Europroiect Estate — agentic coding CLI",
+  "bin": {
+    "codeez": "bin/codeez.js"
+  },
+  "scripts": {
+    "install": "node scripts/install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Europroiect-Estate/Codeez-AI.git"
+  },
+  "keywords": ["cli", "code", "agent", "ollama", "llm"],
+  "license": "MIT",
+  "os": ["darwin", "linux", "win32"],
+  "cpu": ["x64", "arm64"]
+}
