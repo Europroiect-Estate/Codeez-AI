@@ -2,17 +2,17 @@ package config
 
 // Config holds merged global and project configuration.
 type Config struct {
-	Provider string            `mapstructure:"provider"`
-	Model    string            `mapstructure:"model"`
-	APIKey   string            `mapstructure:"api_key"`
-	Palette  string            `mapstructure:"palette"`
-	Paths    PathsConfig       `mapstructure:"paths"`
+	Provider  string                    `mapstructure:"provider"`
+	Model     string                    `mapstructure:"model"`
+	APIKey    string                    `mapstructure:"api_key"`
+	Palette   string                    `mapstructure:"palette"`
+	Paths     PathsConfig               `mapstructure:"paths"`
 	Providers map[string]ProviderConfig `mapstructure:"providers"`
 }
 
 // PathsConfig holds path-related settings.
 type PathsConfig struct {
-	GlobalConfigDir string `mapstructure:"global_config_dir"`
+	GlobalConfigDir  string `mapstructure:"global_config_dir"`
 	ProjectConfigDir string `mapstructure:"project_config_dir"`
 }
 

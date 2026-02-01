@@ -2,14 +2,14 @@ package tokens
 
 // Palette defines colors for TUI and CLI output.
 type Palette struct {
-	FG       string // default foreground
-	BG       string // background
-	Accent   string
-	Success  string
-	Warn     string
-	Danger   string
-	Muted    string
-	Border   string
+	FG        string // default foreground
+	BG        string // background
+	Accent    string
+	Success   string
+	Warn      string
+	Danger    string
+	Muted     string
+	Border    string
 	Highlight string
 }
 

@@ -90,4 +90,3 @@ func TestAudit(t *testing.T) {
 		t.Errorf("GetToolAudit: got %+v", entries)
 	}
 }
-

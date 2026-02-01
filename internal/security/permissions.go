@@ -10,8 +10,8 @@ import (
 
 // PermissionsFile holds "always allow for this repo" rules keyed by repo root.
 type PermissionsFile struct {
-	RepoRoot string            `toml:"repo_root"`
-	Rules    []PermissionRule  `toml:"rules"`
+	RepoRoot string           `toml:"repo_root"`
+	Rules    []PermissionRule `toml:"rules"`
 }
 
 // PermissionRule is a single allow rule (tool + optional pattern + scope).

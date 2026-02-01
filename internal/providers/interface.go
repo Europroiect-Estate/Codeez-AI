@@ -10,16 +10,16 @@ type Message struct {
 
 // StreamEvent is a single event from a streaming response (token chunk or tool call).
 type StreamEvent struct {
-	Token    string     `json:"token,omitempty"`
-	ToolCall *ToolCall  `json:"tool_call,omitempty"`
-	Done     bool       `json:"done,omitempty"`
+	Token    string    `json:"token,omitempty"`
+	ToolCall *ToolCall `json:"tool_call,omitempty"`
+	Done     bool      `json:"done,omitempty"`
 }
 
 // ToolCall represents a tool invocation request from the model.
 type ToolCall struct {
-	ID     string `json:"id"`
-	Name   string `json:"name"`
-	Args   string `json:"args,omitempty"`
+	ID   string `json:"id"`
+	Name string `json:"name"`
+	Args string `json:"args,omitempty"`
 }
 
 // Provider is the common interface for LLM providers.

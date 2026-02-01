@@ -26,7 +26,9 @@ type CmdRunTool struct {
 
 func (t *CmdRunTool) Name() string        { return "cmd.run" }
 func (t *CmdRunTool) Description() string { return "Run command (always requires approval)" }
-func (t *CmdRunTool) Parameters() string  { return `{"command": "string", "args": ["string"], "cwd": "string"}` }
+func (t *CmdRunTool) Parameters() string {
+	return `{"command": "string", "args": ["string"], "cwd": "string"}`
+}
 
 func (t *CmdRunTool) Execute(ctx context.Context, args map[string]interface{}) (string, error) {
 	command, _ := args["command"].(string)

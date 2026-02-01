@@ -13,9 +13,11 @@ type RepoMapTool struct {
 	Cwd string
 }
 
-func (t *RepoMapTool) Name() string        { return "repo.map" }
-func (t *RepoMapTool) Description() string { return "Return key files, modules, languages, build hints" }
-func (t *RepoMapTool) Parameters() string   { return `{}` }
+func (t *RepoMapTool) Name() string { return "repo.map" }
+func (t *RepoMapTool) Description() string {
+	return "Return key files, modules, languages, build hints"
+}
+func (t *RepoMapTool) Parameters() string { return `{}` }
 
 func (t *RepoMapTool) Execute(ctx context.Context, args map[string]interface{}) (string, error) {
 	cwd := t.Cwd

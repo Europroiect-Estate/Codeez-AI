@@ -23,16 +23,16 @@ type Model struct {
 	// Left: conversation
 	Messages []string
 	// Right: plan / current agent
-	PlanText string
+	PlanText  string
 	AgentName string
 	// Bottom: input
 	Input textinput.Model
 	// Modal
-	State       state
-	ApprovalMsg string
+	State         state
+	ApprovalMsg   string
 	ApprovalAgent string
-	ApprovalTool string
-	ApprovalArgs string
+	ApprovalTool  string
+	ApprovalArgs  string
 	// Size
 	Width  int
 	Height int
@@ -59,7 +59,7 @@ func (m Model) Init() tea.Cmd {
 type msgAppend string
 type msgApprove string
 
-func MsgAppend(s string) tea.Msg { return msgAppend(s) }
+func MsgAppend(s string) tea.Msg      { return msgAppend(s) }
 func MsgApprove(scope string) tea.Msg { return msgApprove(scope) }
 
 func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {

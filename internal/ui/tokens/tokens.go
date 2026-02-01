@@ -10,9 +10,9 @@ const (
 
 // Border styles (names for palette-driven rendering).
 const (
-	BorderNormal = "normal"
+	BorderNormal  = "normal"
 	BorderRounded = "rounded"
-	BorderThick  = "thick"
+	BorderThick   = "thick"
 )
 
 // Typography style names.
